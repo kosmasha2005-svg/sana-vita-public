@@ -1,0 +1,30 @@
+<section class="cta" id="appointment">
+  <div class="blob" style="--s:446px; left:-159px; top:-112px; --c:rgba(255,255,255,.7)"></div>
+  <div class="blob" style="--s:446px; left:80%; top:360px; --c:rgba(205,180,219,.45)"></div>
+  <div class="wrap cta__in">
+    <div class="cta__text">
+      <p class="cta__kicker">Ваш наступний крок — до себе</p>
+      <h2 class="cta__title">Записатися<br>на прийом</h2>
+      <p class="cta__sub">Ми з вами на кожному кроці вашого лікування.</p>
+    </div>
+    <form class="form js-lead" novalidate>
+      <div class="form__head">
+        <h3>Заповніть форму</h3>
+        <p>Залиште свої контакти — ми зв’яжемося з вами для підтвердження запису.</p>
+      </div>
+      <div class="form__grid">
+        <label class="field"><span>Ім’я</span><input name="name" type="text" placeholder="Введіть ім’я" required autocomplete="name"></label>
+        <label class="field"><span>Телефон</span><input name="phone" type="tel" placeholder="Введіть номер телефону" required autocomplete="tel"></label>
+        <label class="field"><span>Електронна пошта</span><input name="email" type="email" placeholder="Введіть пошту" autocomplete="email"></label>
+        <label class="field"><span>Спеціаліст</span>
+          <select name="spec" class="js-spec-select">
+            <option value="" selected>Оберіть лікаря або напрямок</option>
+          </select>
+        </label>
+      </div>
+      <label class="agree"><input type="checkbox" name="agree" required><span class="agree__box"></span>Я погоджуюсь з&nbsp;<a href="#" data-soon="Умови надання послуг додамо згодом">умовами надання послуг</a></label>
+      <button class="btn btn--block btn--form" type="submit">Надіслати заявку</button>
+      <p class="form__msg" role="status"></p>
+    </form>
+  </div>
+</section>

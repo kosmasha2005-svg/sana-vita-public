@@ -1,0 +1,86 @@
+<!-- title: Запис до лікаря — Sana Vita | nav: | cta: no | desc: Онлайн-запис на прийом до лікаря Sana Vita в Одесі у три прості кроки. -->
+<section class="page-hero page-hero--tight wrap">
+  <nav class="crumbs" aria-label="Навігація"><a href="index.html">Головна</a><span>/</span><b>Запис до лікаря</b></nav>
+</section>
+
+<section class="wrap book">
+  <div class="blob" style="--s:700px; left:-15%; top:-60px; --c:rgba(222,245,229,.9)"></div>
+  <div class="book__head">
+    <span class="pill pill--sm"><i class="dot dot--accent"></i>Ваш наступний крок — до себе</span>
+    <h1 class="book__title">Запис на прийом до лікаря</h1>
+    <p>Три прості кроки до турботи про ваше здоров’я.</p>
+  </div>
+
+  <ol class="stepper" id="stepper">
+    <li class="is-current"><i>1</i><span>Деталі візиту</span></li>
+    <li><i>2</i><span>Контактна інформація</span></li>
+    <li><i>3</i><span>Заявку надіслано</span></li>
+  </ol>
+
+  <div class="book__grid">
+    <form class="book__card" id="bookForm" novalidate>
+      <!-- КРОК 1 -->
+      <div class="bstep is-active" data-step="1">
+        <h2>Деталі візиту</h2>
+        <p class="bstep__lead">Оберіть послугу, лікаря та бажані дату й час.</p>
+        <label class="bfield"><span>Обрати послугу</span><select name="service" id="bService"></select></label>
+        <label class="bfield"><span>Обрати спеціаліста</span><select name="doctor" id="bDoctor"></select></label>
+        <div class="bfield-row">
+          <label class="bfield"><span>Обрати дату</span><input type="date" name="date" id="bDate" required></label>
+          <label class="bfield"><span>Обрати час</span><select name="time" id="bTime"></select></label>
+        </div>
+        <p class="bstep__note">Обраний час є ілюстративним. Адміністратор уточнить можливість прийому та підтвердить запис.</p>
+        <div class="bstep__btns">
+          <a class="btn btn--md btn--ghost btn--back" href="javascript:history.back()" id="bBack1">Назад</a>
+          <button class="btn btn--md" type="button" data-next="2">Продовжити</button>
+        </div>
+      </div>
+
+      <!-- КРОК 2 -->
+      <div class="bstep" data-step="2">
+        <h2>Контактна інформація</h2>
+        <p class="bstep__lead">Залиште контакти, щоб адміністратор міг узгодити з вами час прийому.</p>
+        <label class="bfield"><span>Ваше ім’я *</span><input name="name" type="text" placeholder="Введіть ваше ім’я" autocomplete="name"></label>
+        <label class="bfield"><span>Номер телефону *</span><input name="phone" type="tel" placeholder="+380 __ ___ __ __" autocomplete="tel" inputmode="tel"></label>
+        <label class="bfield"><span>E-mail · необов’язково</span><input name="email" type="email" placeholder="Введіть вашу електронну адресу" autocomplete="email"></label>
+        <label class="agree agree--book"><input type="checkbox" name="agree"><span class="agree__box"></span><span>Я погоджуюся на обробку персональних даних відповідно до Політики конфіденційності.</span></label>
+        <p class="form__msg" id="bErr" role="alert"></p>
+        <div class="bstep__btns">
+          <button class="btn btn--md btn--ghost btn--back" type="button" data-next="1">Назад</button>
+          <button class="btn btn--md" type="button" data-next="3">Продовжити</button>
+        </div>
+      </div>
+
+      <!-- КРОК 3 -->
+      <div class="bstep" data-step="3">
+        <span class="bdone"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h2>Заявку надіслано</h2>
+        <p class="bstep__lead bstep__lead--dark" id="bThanks">Дякуємо за довіру. Адміністратор зв’яжеться з вами, щоб узгодити дату й час прийому.</p>
+        <div class="bnext">
+          <h3>Що далі?</h3>
+          <p>Дочекайтеся дзвінка адміністратора. Він підтвердить час та відповість на ваші запитання.</p>
+          <p>Якщо потрібно змінити деталі, зателефонуйте: <a href="tel:+380980480303">+38 (098) 048 03 03</a>.</p>
+        </div>
+        <a class="btn btn--md btn--block" href="index.html">На головну</a>
+      </div>
+    </form>
+
+    <aside class="summary">
+      <h2>Деталі вашого візиту</h2>
+      <div class="summary__doc"><span class="summary__ava"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#245c4b" stroke-width="1.8"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6" stroke="#245c4b" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b id="sDoc">—</b><small id="sSpec"></small></span></div>
+      <dl>
+        <dt>Послуга</dt><dd id="sService">—</dd>
+        <dt>Дата й час</dt><dd id="sWhen">—</dd>
+        <dt>Адреса</dt><dd>м. Одеса, вул. Водопровідна, 2/5</dd>
+      </dl>
+      <div class="summary__price"><span>Вартість прийому</span><b id="sPrice">—</b></div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap book-help-wrap">
+  <div class="book-help">
+    <div><h2>Потрібна допомога із записом?</h2><p>Зателефонуйте — адміністратор допоможе з вибором.</p></div>
+    <a href="tel:+380980480303">+38 (098) 048 03 03</a>
+  </div>
+</section>
