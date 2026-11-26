@@ -541,10 +541,13 @@ a.utility__addr:hover{text-decoration:underline}
 .svc-card{background:var(--mint-light);border-radius:24px;padding:32px;min-height:268px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s,background .25s}
 .svc-card h3{font-weight:500;font-size:24px;margin-top:20px}
 .svc-card p{font-size:16px;line-height:24px;color:var(--text-2)}
-.svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(36,92,75,.12);background:#fff}
-.svc-card.is-featured{background:var(--accent);color:#fff}
-.svc-card.is-featured p{color:rgba(255,255,255,.75)}
-.svc-card.is-featured:hover{background:var(--accent-h)}
+.svc-card p{transition:color .25s}
+.svc-card h3{transition:color .25s}
+/* наведення / фокус: картка заливається акцентним кольором */
+.svc-card:hover,.svc-card:focus-visible{background:var(--accent);color:#fff;transform:translateY(-4px);box-shadow:0 16px 36px rgba(155,63,181,.28);outline:none}
+.svc-card:hover p,.svc-card:focus-visible p{color:rgba(255,255,255,.8)}
+.svc-card__ico{transition:transform .25s}
+.svc-card:hover .svc-card__ico{transform:scale(1.06)}
 .callout{display:flex;align-items:center;justify-content:space-between;gap:32px;background:var(--success);border-radius:40px;padding:56px;margin-top:106px}
 .callout h2{font-weight:500;font-size:36px}
 .callout p{font-size:20px;line-height:30px;color:var(--text-2);max-width:900px;margin-top:10px}
