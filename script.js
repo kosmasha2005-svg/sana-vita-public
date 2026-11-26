@@ -43,6 +43,13 @@
     $$('.nav a').forEach((a) => a.addEventListener('click', () => header.classList.remove('is-menu')));
   }
 
+  /* ---------- тінь під меню, коли верхня смужка сховалась ---------- */
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-stuck', scrollY > 40);
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---------- copy address ---------- */
   $$('#copyAddr').forEach((b) => b.addEventListener('click', async () => {
     const addr = 'вул. Водопровідна 2/5, Одеса';

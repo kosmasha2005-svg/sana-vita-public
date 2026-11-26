@@ -30,13 +30,13 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:130px}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--ff);font-weight:400;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p{margin:0}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
-main{position:relative;overflow:hidden}
+main{position:relative;overflow-x:clip}
 
 .wrap{width:100%;max-width:calc(var(--wrap) + var(--gutter)*2);margin:0 auto;padding:0 var(--gutter);position:relative}
 .section{padding:110px var(--gutter)}
@@ -79,9 +79,12 @@ section>*:not(.blob){position:relative;z-index:1}
 .ico-circle--36{width:36px;height:36px;background:var(--mint)}
 
 /* ===== Header ===== */
-.header{position:sticky;top:0;z-index:50}
+/* верхня зелена смужка (40px) ховається при скролі, основне меню лишається */
+.header{position:sticky;top:-40px;z-index:50}
+.mainbar{position:relative;transition:box-shadow .25s}
+.header.is-stuck .mainbar{box-shadow:0 6px 20px rgba(43,58,66,.08)}
 .utility{background:var(--green);color:#fff;font-size:14px}
-.utility__in{display:flex;justify-content:space-between;align-items:center;height:40px}
+.utility__in{display:flex;justify-content:space-between;align-items:center;height:40px;overflow:hidden}
 .utility__left,.utility__right{display:flex;align-items:center;gap:24px}
 .utility__addr,.utility__account{display:flex;align-items:center;gap:8px}
 .utility__hours{color:var(--mint)}
@@ -394,7 +397,7 @@ section>*:not(.blob){position:relative;z-index:1}
 @media (max-width:960px){
   .utility__hours{display:none}
   .burger{display:flex}
-  .nav{position:fixed;inset:120px 0 auto 0;margin:0;flex-direction:column;align-items:stretch;gap:0;background:var(--mint-light);border-bottom:1px solid var(--border);padding:8px var(--gutter) 20px;box-shadow:0 18px 30px rgba(43,58,66,.12);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.2s}
+  .nav{position:absolute;inset:100% 0 auto 0;max-height:calc(100vh - 80px);overflow-y:auto;margin:0;flex-direction:column;align-items:stretch;gap:0;background:var(--mint-light);border-bottom:1px solid var(--border);padding:8px var(--gutter) 20px;box-shadow:0 18px 30px rgba(43,58,66,.12);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.2s}
   .nav a{padding:14px 0;border-bottom:1px solid var(--border);font-size:18px}
   .nav a::after{display:none}
   .nav__phone-m{display:flex!important;font-weight:700;color:var(--green);border-bottom:0!important}
@@ -416,12 +419,11 @@ section>*:not(.blob){position:relative;z-index:1}
 
 @media (max-width:640px){
   :root{--gutter:16px}
-  html{scroll-padding-top:90px}
+  html{scroll-padding-top:80px}
   .utility__addr{font-size:12px}
   .utility__addr svg{display:none}
   .utility__account{display:none}
   .mainbar__in{height:64px}
-  .nav{inset:104px 0 auto 0}
   .logo img{width:140px}
   .mainbar__right .btn--sm{display:none}
   .section,.section-sm{padding-top:64px;padding-bottom:64px}
@@ -722,7 +724,7 @@ a.dcard__name:hover{color:var(--green);text-decoration:underline}
 
 /* PRICES PAGE */
 .plist{display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start;padding-top:56px;padding-bottom:110px}
-.plist>.plist__side{position:sticky;top:140px;display:flex;flex-direction:column;gap:20px}
+.plist>.plist__side{position:static;display:flex;flex-direction:column;gap:20px}
 .dirs{background:var(--mint-light);border:1px solid var(--mint);border-radius:28px;padding:28px 24px 32px}
 .dirs h2{font-weight:500;font-size:28px;margin:0 0 16px 0}
 .dirs a{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;font-size:20px;transition:background .2s,color .2s}
@@ -758,7 +760,7 @@ a.dcard__name:hover{color:var(--green);text-decoration:underline}
 
 /* BOOKING */
 .book{padding-top:40px;padding-bottom:110px}
-.book__head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;scroll-margin-top:140px}
+.book__head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;scroll-margin-top:100px}
 .book__title{font-weight:500;font-size:72px;line-height:1.15;letter-spacing:.07em}
 .book__head p{font-size:22px;color:var(--text-2)}
 .stepper{list-style:none;margin:48px auto 64px;padding:0;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -797,7 +799,7 @@ a.dcard__name:hover{color:var(--green);text-decoration:underline}
 .bnext h3{font-weight:500;font-size:28px}
 .bnext p{font-size:18px;line-height:26px;color:var(--text-2)}
 .bnext a{color:var(--green);font-weight:500}
-.summary{position:sticky;top:140px;background:var(--success);border-radius:28px;padding:36px}
+.summary{position:sticky;top:100px;background:var(--success);border-radius:28px;padding:36px}
 .summary h2{font-weight:500;font-size:28px}
 .summary__doc{display:flex;align-items:center;gap:20px;background:#fff;border-radius:20px;padding:18px 20px;margin:24px 0}
 .summary__ava{flex:none;width:64px;height:64px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center}
