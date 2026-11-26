@@ -5,12 +5,20 @@
 <!-- title: Назва | nav: about | cta: no | desc: Опис -->
 Запуск: python3 build.py
 """
+import hashlib
 import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src"
 PART = {p.stem: p.read_text(encoding="utf-8") for p in (SRC / "partials").glob("*.html")}
+
+
+def ver(name: str) -> str:
+    """Короткий відбиток вмісту файлу: після змін браузер точно завантажить нову версію."""
+    return hashlib.md5((ROOT / name).read_bytes()).hexdigest()[:8]
+
+
 DEFAULT_DESC = ("Sana Vita — медицина, у якій є місце турботі. Проктологія, урологія, гінекологія, "
                 "дерматологія, стоматологія та УЗД-діагностика в Одесі.")
 
@@ -24,7 +32,7 @@ TEMPLATE = """<!doctype html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@500;600&family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v={v_css}">
   <link rel="icon" href="assets/logo.png">
 </head>
 <body data-page="{page}">
@@ -36,8 +44,8 @@ TEMPLATE = """<!doctype html>
 </main>
 {footer}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="data.js"></script>
-<script src="script.js"></script>
+<script src="data.js?v={v_data}"></script>
+<script src="script.js?v={v_js}"></script>
 </body>
 </html>
 """
@@ -66,6 +74,9 @@ def build(page: pathlib.Path) -> None:
         body=raw.strip("\n"),
         cta="" if meta.get("cta") == "no" else PART["cta"],
         footer=PART["footer"],
+        v_css=ver("styles.css"),
+        v_data=ver("data.js"),
+        v_js=ver("script.js"),
     )
     (ROOT / page.name).write_text(html, encoding="utf-8")
     print("built", page.name)
