@@ -38,10 +38,43 @@
   /* ---------- mobile menu + services dropdown ---------- */
   const header = $('.header');
   const burger = $('.burger');
+  const isMobile = () => matchMedia('(max-width: 640px)').matches;
   if (header && burger) {
-    burger.addEventListener('click', () => burger.setAttribute('aria-expanded', header.classList.toggle('is-menu')));
-    $$('.nav a').forEach((a) => a.addEventListener('click', () => header.classList.remove('is-menu')));
+    const setMenu = (open) => {
+      header.classList.toggle('is-menu', open);
+      burger.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open && isMobile());
+    };
+    burger.addEventListener('click', () => setMenu(!header.classList.contains('is-menu')));
+    $$('.nav a, .mmenu a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
   }
+  // мобільний перемикач мови UA / RU
+  $$('.m-lang button').forEach((b) => b.addEventListener('click', () => {
+    $$('.m-lang button').forEach((x) => x.classList.toggle('is-active', x === b));
+    if (b.dataset.lang !== 'UA') toast('Російська версія сайту з’явиться згодом');
+  }));
+
+  /* ---------- мобільна карусель послуг: крапки ---------- */
+  const msvcTrack = $('#msvcTrack');
+  const msvcDots = $$('#msvcDots i');
+  if (msvcTrack && msvcDots.length) {
+    msvcTrack.addEventListener('scroll', () => {
+      const max = msvcTrack.scrollWidth - msvcTrack.clientWidth;
+      const i = max > 0 ? Math.round((msvcTrack.scrollLeft / max) * (msvcDots.length - 1)) : 0;
+      msvcDots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+    }, { passive: true });
+  }
+
+  /* ---------- профіль лікаря: розгортання тем на телефоні ---------- */
+  $$('.hcard[role="button"]').forEach((c) => {
+    const toggle = () => {
+      if (!isMobile()) return;
+      c.setAttribute('aria-expanded', c.classList.toggle('is-open'));
+    };
+    c.addEventListener('click', toggle);
+    c.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
 
   /* ---------- тінь під меню, коли верхня смужка сховалась ---------- */
   if (header) {
@@ -182,12 +215,19 @@
       if (push) history.pushState({ dir: key }, '', `prices.html?dir=${key}`);
       document.title = `Ціни: ${p.name} — Sana Vita`;
     };
+    const dirsBox = $('.dirs');
+    const dirsToggle = $('.dirs__toggle');
+    const setOpen = (open) => { dirsBox.classList.toggle('is-open', open); if (dirsToggle) dirsToggle.setAttribute('aria-expanded', open); };
+    if (dirsToggle) dirsToggle.addEventListener('click', () => setOpen(!dirsBox.classList.contains('is-open')));
     dirList.addEventListener('click', (e) => {
       const a = e.target.closest('a[data-dir]');
       if (!a) return;
       e.preventDefault();
+      // на телефоні тап по вибраному напряму відкриває / закриває список
+      if (isMobile() && a.classList.contains('is-active')) { setOpen(!dirsBox.classList.contains('is-open')); return; }
       show(a.dataset.dir, true);
-      if (innerWidth < 960) priceTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setOpen(false);
+      if (innerWidth < 960 && !isMobile()) priceTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     addEventListener('popstate', () => show(new URLSearchParams(location.search).get('dir'), false));
     show(params.get('dir') || 'gynecology', false);

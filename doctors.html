@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@500;600&family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=d27759d8">
+  <link rel="stylesheet" href="styles.css?v=9ba0e10e">
   <link rel="icon" href="assets/logo.png">
 </head>
 <body data-page="doctors">
@@ -71,8 +71,25 @@
           +38 067 497 91 59
         </a>
         <a class="btn btn--sm" href="booking.html">Записатися</a>
-        <button class="burger" type="button" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="m-call m-only" href="tel:+380674979159" aria-label="Зателефонувати"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 16.4v2.8a1.9 1.9 0 0 1-2 1.9 18.7 18.7 0 0 1-8.2-2.9 18.4 18.4 0 0 1-5.7-5.7A18.7 18.7 0 0 1 1.2 4.3 1.9 1.9 0 0 1 3.1 2.2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.4 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L6.9 9.7a15 15 0 0 0 5.7 5.7l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.3 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+        <div class="m-lang m-only" role="group" aria-label="Мова сайту"><button type="button" class="is-active" data-lang="UA">UA</button><button type="button" data-lang="RU">RU</button></div>
+        <button class="burger" type="button" aria-label="Меню" aria-controls="mmenu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
+    </div>
+  </div>
+  <!-- мобільне меню (макет «Меню відкрите · mobile 360») -->
+  <div class="mmenu m-only" id="mmenu">
+    <nav class="mmenu__list" aria-label="Мобільне меню">
+      <a href="services.html">Послуги</a>
+      <a href="doctors.html">Лікарі</a>
+      <a href="prices.html">Ціни</a>
+      <a href="contacts.html">Контакти</a>
+      <a href="about.html">Про клініку</a>
+    </nav>
+    <a class="mmenu__account" href="#" data-soon="Особистий кабінет скоро запрацює"><span class="ico-circle ico-circle--mint"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="#2b3a42" stroke-width="1.3"/><path d="M2.5 14c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4" stroke="#2b3a42" stroke-width="1.3" stroke-linecap="round"/></svg></span>Особистий кабінет</a>
+    <div class="mmenu__foot">
+      <a class="mmenu__addr" href="contacts.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11a7 7 0 0 0-14 0c0 4.9 7 11 7 11Z" stroke="#9b3fb5" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="#9b3fb5" stroke-width="1.8"/></svg>м. Одеса, вул. Водопровідна 2/5</a>
+      <a class="btn btn--block" href="booking.html">Записатися · 067 497 91 59</a>
     </div>
   </div>
 </header>
@@ -135,8 +152,9 @@
   <div class="wrap cta__in">
     <div class="cta__text">
       <p class="cta__kicker">Ваш наступний крок — до себе</p>
-      <h2 class="cta__title">Записатися<br>на прийом</h2>
+      <h2 class="cta__title">Записатися<br> на прийом</h2>
       <p class="cta__sub">Ми з вами на кожному кроці вашого лікування.</p>
+      <a class="btn btn--block cta__mbtn m-only" href="booking.html">Записатися <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M4.6 11h12.8M12 5.5l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <form class="form js-lead" novalidate>
       <div class="form__head">
@@ -185,6 +203,15 @@
         <a href="booking.html">Запис до лікаря</a>
       </div>
     </div>
+    <div class="mfoot m-only">
+      <a href="index.html"><img src="assets/logo-footer.png" alt="Sana Vita" width="144" height="27"></a>
+      <p class="mfoot__tag">Медицина, у якій є місце турботі.</p>
+      <a class="mfoot__phone" href="tel:+380980480303">+38 (098) 048 03 03</a>
+      <a href="contacts.html">м. Одеса, вул. Водопровідна 2/5</a>
+      <a href="mailto:director@sanavita.com.ua">director@sanavita.com.ua</a>
+      <nav class="mfoot__nav"><a href="about.html">Про нас</a><a href="services.html">Послуги</a><a href="doctors.html">Лікарі</a><a href="prices.html">Ціни</a><a href="contacts.html">Контакти</a></nav>
+      <span class="mfoot__copy">© Sana Vita. Усі права захищено.</span>
+    </div>
     <div class="footer__bottom">
       <span>© Sana Vita. Усі права захищено.</span>
       <a href="#" data-soon="Політику конфіденційності додамо згодом">Політика конфіденційності</a>
@@ -194,6 +221,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="data.js?v=c3c04fa9"></script>
-<script src="script.js?v=d953a0f7"></script>
+<script src="script.js?v=1d352658"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@500;600&family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=d27759d8">
+  <link rel="stylesheet" href="styles.css?v=9ba0e10e">
   <link rel="icon" href="assets/logo.png">
 </head>
 <body data-page="services">
@@ -71,8 +71,25 @@
           +38 067 497 91 59
         </a>
         <a class="btn btn--sm" href="booking.html">Записатися</a>
-        <button class="burger" type="button" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="m-call m-only" href="tel:+380674979159" aria-label="Зателефонувати"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 16.4v2.8a1.9 1.9 0 0 1-2 1.9 18.7 18.7 0 0 1-8.2-2.9 18.4 18.4 0 0 1-5.7-5.7A18.7 18.7 0 0 1 1.2 4.3 1.9 1.9 0 0 1 3.1 2.2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.4 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L6.9 9.7a15 15 0 0 0 5.7 5.7l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.3 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+        <div class="m-lang m-only" role="group" aria-label="Мова сайту"><button type="button" class="is-active" data-lang="UA">UA</button><button type="button" data-lang="RU">RU</button></div>
+        <button class="burger" type="button" aria-label="Меню" aria-controls="mmenu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
+    </div>
+  </div>
+  <!-- мобільне меню (макет «Меню відкрите · mobile 360») -->
+  <div class="mmenu m-only" id="mmenu">
+    <nav class="mmenu__list" aria-label="Мобільне меню">
+      <a href="services.html">Послуги</a>
+      <a href="doctors.html">Лікарі</a>
+      <a href="prices.html">Ціни</a>
+      <a href="contacts.html">Контакти</a>
+      <a href="about.html">Про клініку</a>
+    </nav>
+    <a class="mmenu__account" href="#" data-soon="Особистий кабінет скоро запрацює"><span class="ico-circle ico-circle--mint"><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="#2b3a42" stroke-width="1.3"/><path d="M2.5 14c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4" stroke="#2b3a42" stroke-width="1.3" stroke-linecap="round"/></svg></span>Особистий кабінет</a>
+    <div class="mmenu__foot">
+      <a class="mmenu__addr" href="contacts.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11a7 7 0 0 0-14 0c0 4.9 7 11 7 11Z" stroke="#9b3fb5" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="#9b3fb5" stroke-width="1.8"/></svg>м. Одеса, вул. Водопровідна 2/5</a>
+      <a class="btn btn--block" href="booking.html">Записатися · 067 497 91 59</a>
     </div>
   </div>
 </header>
@@ -88,22 +105,22 @@
 <section class="wrap svc-grid-sec">
   <span class="pill pill--sm"><i class="dot dot--accent"></i>Усе для вашого здоров’я</span>
   <div class="svc-grid">
-    <a class="svc-card" href="proctology.html"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><h3>Проктологія</h3><p>Делікатно, спокійно й без осуду.</p></a>
-    <a class="svc-card" href="prices.html?dir=urology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5Z"/></svg></span><h3>Урологія</h3><p>Чоловіче й жіноче здоров’я — тактовно й уважно.</p></a>
-    <a class="svc-card" href="prices.html?dir=usg"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span><h3>УЗД-діагностика</h3><p>Точна картина без болю й зайвого стресу.</p></a>
-    <a class="svc-card" href="prices.html?dir=dermatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><h3>Дерматологія</h3><p>Турбота про шкіру, волосся та нігті.</p></a>
-    <a class="svc-card" href="prices.html?dir=gynecology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M20.8 8.6c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11A4.6 4.6 0 0 1 12 6a4.6 4.6 0 0 1 8.8 2.6Z"/></svg></span><h3>Гінекологія</h3><p>Підтримка жіночого здоров’я на кожному етапі.</p></a>
-    <a class="svc-card" href="booking.html?service=family"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.6-3.2 3-5 6-5s5.4 1.8 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.6-.3 4.6 1.4 5 4.3"/></svg></span><h3>Сімейна медицина</h3><p>Лікар, який дбає про всю вашу родину.</p></a>
-    <a class="svc-card" href="prices.html?dir=stomatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M7 3.5c-2.3 0-3.8 2-3.5 4.6.3 2.4 1.4 3.6 1.8 6 .4 2.6.9 6.4 2.5 6.4 1.7 0 1.6-4.5 4.2-4.5s2.5 4.5 4.2 4.5c1.6 0 2.1-3.8 2.5-6.4.4-2.4 1.5-3.6 1.8-6 .3-2.6-1.2-4.6-3.5-4.6-2 0-3 1.2-5 1.2s-3-1.2-5-1.2Z"/></svg></span><h3>Стоматологія</h3><p>Усмішка без страху та дискомфорту.</p></a>
-    <a class="svc-card" href="prices.html?dir=surgery"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M20 4 9 15M9 15l-3 5-2-2 5-3M14 4h6v6"/></svg></span><h3>Хірургія</h3><p>М’які методики й швидке відновлення.</p></a>
-    <a class="svc-card" href="booking.html?service=massage"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14Z"/><path d="M5 19 13 11"/></svg></span><h3>Масаж</h3><p>Розслаблення, легкість і відновлення сил.</p></a>
-    <a class="svc-card" href="booking.html?service=neuro"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M11 4.5C9 3 5.5 4 5.5 7 3.5 8 3.5 11 5 12c-1.5 1.5-.5 4.5 1.5 4.8C7 19.5 10 20.5 11 19ZM13 4.5c2-1.5 5.5-.5 5.5 2.5 2 1 2 4 .5 5 1.5 1.5.5 4.5-1.5 4.8-.5 2.7-3.5 3.7-4.5 2.2Z"/></svg></span><h3>Неврологія</h3><p>Допоможемо з болем, напругою та сном.</p></a>
-    <a class="svc-card" href="prices.html?dir=gastro"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M9 3v4c0 2 1 3 3 3h1a4 4 0 0 1 0 8H9a3 3 0 0 0-3 3"/></svg></span><h3>Гастроентерологія</h3><p>Комфорт для травлення без поспіху.</p></a>
-    <a class="svc-card" href="contacts.html"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 14h9"/></svg></span><h3>Лабораторія</h3><p>Зрозумілі й точні аналізи на місці.</p></a>
-    <a class="svc-card" href="prices.html?dir=vascular"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3c-3 3 3 5 0 8s3 5 0 8-1 2-1 2"/></svg></span><h3>Флебологія</h3><p>Легкість у ногах і впевненість щодня.</p></a>
-    <a class="svc-card" href="prices.html?dir=dermatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/></svg></span><h3>Косметологія</h3><p>Краса, що дбає про вас.</p></a>
-    <a class="svc-card" href="about.html"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg></span><h3>Денний стаціонар</h3><p>Лікування без нічного перебування.</p></a>
-    <a class="svc-card" href="prices.html?dir=physio"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><h3>Фізіотерапія</h3><p>Відновлення після лікування та навантажень.</p></a>
+    <a class="svc-card svc-card--main" href="proctology.html"><img class="m-only svc-card__img" src="assets/svc-proctology.png" alt=""><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><h3>Проктологія</h3><p class="d-only">Делікатно, спокійно й без осуду.</p><p class="m-only">Головна спеціалізація центру</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=urology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5Z"/></svg></span><h3>Урологія</h3><p class="d-only">Чоловіче й жіноче здоров’я — тактовно й уважно.</p><p class="m-only">Чоловіче й жіноче здоров’я</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=usg"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span><h3>УЗД-діагностика</h3><p class="d-only">Точна картина без болю й зайвого стресу.</p><p class="m-only">Точно й без стресу</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=dermatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><h3>Дерматологія</h3><p class="d-only">Турбота про шкіру, волосся та нігті.</p><p class="m-only">Шкіра, волосся, нігті</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=gynecology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M20.8 8.6c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11A4.6 4.6 0 0 1 12 6a4.6 4.6 0 0 1 8.8 2.6Z"/></svg></span><h3>Гінекологія</h3><p class="d-only">Підтримка жіночого здоров’я на кожному етапі.</p><p class="m-only">Підтримка на кожному етапі</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="booking.html?service=family"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.6-3.2 3-5 6-5s5.4 1.8 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.6-.3 4.6 1.4 5 4.3"/></svg></span><h3>Сімейна медицина</h3><p class="d-only">Лікар, який дбає про всю вашу родину.</p><p class="m-only">Лікар для всієї родини</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=stomatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M7 3.5c-2.3 0-3.8 2-3.5 4.6.3 2.4 1.4 3.6 1.8 6 .4 2.6.9 6.4 2.5 6.4 1.7 0 1.6-4.5 4.2-4.5s2.5 4.5 4.2 4.5c1.6 0 2.1-3.8 2.5-6.4.4-2.4 1.5-3.6 1.8-6 .3-2.6-1.2-4.6-3.5-4.6-2 0-3 1.2-5 1.2s-3-1.2-5-1.2Z"/></svg></span><h3>Стоматологія</h3><p class="d-only">Усмішка без страху та дискомфорту.</p><p class="m-only">Усмішка без страху</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=surgery"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M20 4 9 15M9 15l-3 5-2-2 5-3M14 4h6v6"/></svg></span><h3>Хірургія</h3><p class="d-only">М’які методики й швидке відновлення.</p><p class="m-only">М’які методики</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="booking.html?service=massage"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14Z"/><path d="M5 19 13 11"/></svg></span><h3>Масаж</h3><p class="d-only">Розслаблення, легкість і відновлення сил.</p><p class="m-only">Розслаблення й відновлення</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="booking.html?service=neuro"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M11 4.5C9 3 5.5 4 5.5 7 3.5 8 3.5 11 5 12c-1.5 1.5-.5 4.5 1.5 4.8C7 19.5 10 20.5 11 19ZM13 4.5c2-1.5 5.5-.5 5.5 2.5 2 1 2 4 .5 5 1.5 1.5.5 4.5-1.5 4.8-.5 2.7-3.5 3.7-4.5 2.2Z"/></svg></span><h3>Неврологія</h3><p class="d-only">Допоможемо з болем, напругою та сном.</p><p class="m-only">Біль, напруга, сон</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=gastro"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M9 3v4c0 2 1 3 3 3h1a4 4 0 0 1 0 8H9a3 3 0 0 0-3 3"/></svg></span><h3>Гастроентерологія</h3><p class="d-only">Комфорт для травлення без поспіху.</p><p class="m-only">Комфорт для травлення</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="contacts.html"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 14h9"/></svg></span><h3>Лабораторія</h3><p class="d-only">Зрозумілі й точні аналізи на місці.</p><p class="m-only">Зрозумілі й точні аналізи</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=vascular"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3c-3 3 3 5 0 8s3 5 0 8-1 2-1 2"/></svg></span><h3>Флебологія</h3><p class="d-only">Легкість у ногах і впевненість щодня.</p><p class="m-only">Легкість у ногах</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=dermatology"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/></svg></span><h3>Косметологія</h3><p class="d-only">Краса, що дбає про вас.</p><p class="m-only">Краса, що дбає про вас</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="about.html"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg></span><h3>Денний стаціонар</h3><p class="d-only">Лікування без нічного перебування.</p><p class="m-only">Лікування без ночі в клініці</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-card" href="prices.html?dir=physio"><span class="svc-card__ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><h3>Фізіотерапія</h3><p class="d-only">Відновлення після лікування та навантажень.</p><p class="m-only">Відновлення після лікування</p><svg class="chev m-only" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 3.5 4.5 4.5L6 12.5" stroke="#2b3a42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 
   <div class="callout">
@@ -123,8 +140,9 @@
   <div class="wrap cta__in">
     <div class="cta__text">
       <p class="cta__kicker">Ваш наступний крок — до себе</p>
-      <h2 class="cta__title">Записатися<br>на прийом</h2>
+      <h2 class="cta__title">Записатися<br> на прийом</h2>
       <p class="cta__sub">Ми з вами на кожному кроці вашого лікування.</p>
+      <a class="btn btn--block cta__mbtn m-only" href="booking.html">Записатися <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M4.6 11h12.8M12 5.5l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <form class="form js-lead" novalidate>
       <div class="form__head">
@@ -173,6 +191,15 @@
         <a href="booking.html">Запис до лікаря</a>
       </div>
     </div>
+    <div class="mfoot m-only">
+      <a href="index.html"><img src="assets/logo-footer.png" alt="Sana Vita" width="144" height="27"></a>
+      <p class="mfoot__tag">Медицина, у якій є місце турботі.</p>
+      <a class="mfoot__phone" href="tel:+380980480303">+38 (098) 048 03 03</a>
+      <a href="contacts.html">м. Одеса, вул. Водопровідна 2/5</a>
+      <a href="mailto:director@sanavita.com.ua">director@sanavita.com.ua</a>
+      <nav class="mfoot__nav"><a href="about.html">Про нас</a><a href="services.html">Послуги</a><a href="doctors.html">Лікарі</a><a href="prices.html">Ціни</a><a href="contacts.html">Контакти</a></nav>
+      <span class="mfoot__copy">© Sana Vita. Усі права захищено.</span>
+    </div>
     <div class="footer__bottom">
       <span>© Sana Vita. Усі права захищено.</span>
       <a href="#" data-soon="Політику конфіденційності додамо згодом">Політика конфіденційності</a>
@@ -182,6 +209,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="data.js?v=c3c04fa9"></script>
-<script src="script.js?v=d953a0f7"></script>
+<script src="script.js?v=1d352658"></script>
 </body>
 </html>
